@@ -50,3 +50,27 @@ export interface ModalProps {
   children: React.ReactNode;
   size?: 'sm' | 'md' | 'lg' | 'xl';
 }
+
+export interface FilterProps {
+  filter: string
+  handleFilterChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  sort: string
+  setSort: (value: string) => void
+}
+
+export interface StatsProps {
+  totalValue: number
+  totalItems: number
+}
+
+export interface FilteredDataProps {
+  filteredData: {
+    id: number
+    name: string
+    description: string
+    price: number
+    category: string
+    stock: number
+    createdAt: string
+  }[]
+}

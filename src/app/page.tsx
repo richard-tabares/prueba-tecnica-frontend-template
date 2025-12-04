@@ -71,7 +71,9 @@ const LegacyDashboard = () => {
         // Limitar el tamaño del cache a 20 entradas
         if (cacheRef.current.size > 20) {
             const firstKey = cacheRef.current.keys().next().value
-            cacheRef.current.delete(firstKey)
+            if (firstKey) {
+                cacheRef.current.delete(firstKey)
+            }
         }
 
         return result
